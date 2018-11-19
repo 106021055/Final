@@ -10,12 +10,14 @@ public class Final extends JFrame {
     }
     private JButton jbtnstart = new JButton("");
     private JButton jbtnexit = new JButton("");
-    private JButton jbtnpause = new JButton("turn off");
+    private JButton jbtnpause = new JButton("");
 //    private ImageIcon img = new ImageIcon("light.png");
 //    private ImageIcon imageIcon[] = new ImageIcon[]{new ImageIcon("0.png"), new ImageIcon("1.png")};
     private ImageIcon img1 = new ImageIcon("light.png");
     private ImageIcon img2 = new ImageIcon("start.png");
     private ImageIcon img3 = new ImageIcon("exit.png");
+    private ImageIcon img4 = new ImageIcon("pause.png");
+    private ImageIcon img5 = new ImageIcon("start2.png");
     private JLabel jlb = new JLabel();
     private Timer bgTimer;
     private int bg = 1;
@@ -39,7 +41,7 @@ public class Final extends JFrame {
         jlb.setBounds(300,10,1200,800);
         jbtnstart.setBounds(320,700,200,200);
         jbtnexit.setBounds(960,700,200,200);
-        jbtnpause.setBounds(1400,10,150,50);
+        jbtnpause.setBounds(1400,10,80,80);
 
         jbtnstart.setFont(new Font(null,Font.BOLD,70));
         jbtnexit.setFont(new Font(null,Font.BOLD,70));
@@ -51,6 +53,10 @@ public class Final extends JFrame {
         jbtnexit.setContentAreaFilled(false);
         jbtnexit.setBorderPainted(false);
         jbtnexit.setForeground(Color.RED);
+        jbtnpause.setContentAreaFilled(false);
+        jbtnpause.setBorderPainted(false);
+        jbtnpause.setForeground(Color.RED);
+
 
 
 
@@ -59,6 +65,8 @@ public class Final extends JFrame {
         jlb.setIcon(img1);
         jbtnstart.setIcon(img2);
         jbtnexit.setIcon(img3);
+        jbtnpause.setIcon(img4);
+        
         this.add(jlb);
         this.add(jbtnstart);
         this.add(jbtnexit);
@@ -75,7 +83,7 @@ public class Final extends JFrame {
                     bg = 2;
                 }else if (bg == 2){
 //                    jlb.setIcon(imageIcon[1]);
-                    container.setBackground(Color.BLACK);
+                    container.setBackground(Color.white);
                     bg = 1;
                 }
             }
@@ -109,12 +117,12 @@ public class Final extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JButton tmpbtn = (JButton) e.getSource();
-                if (tmpbtn.getText().equals("turn on")) {
+                if (tmpbtn.getIcon().equals(img5)) {          //tmpbtn.getText().equals("turn on")
                     bgTimer.start();
-                    tmpbtn.setText("turn off");
+                    tmpbtn.setIcon(img4);
                 } else {
                     bgTimer.stop();
-                    tmpbtn.setText("turn on");
+                    tmpbtn.setIcon(img5);
                 }
             }
         });
