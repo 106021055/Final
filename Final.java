@@ -11,8 +11,12 @@ public class Final extends JFrame {
     private JButton jbtnstart = new JButton("");
     private JButton jbtnexit = new JButton("");
     private JButton jbtnpause = new JButton("");
-//    private ImageIcon img = new ImageIcon("light.png");
-//    private ImageIcon imageIcon[] = new ImageIcon[]{new ImageIcon("0.png"), new ImageIcon("1.png")};
+    private JMenuBar jmb = new JMenuBar();
+    private JMenu jmusystem = new JMenu("System");
+    private JMenu jmuabout = new JMenu("About");
+    private JMenuItem jmiback = new JMenuItem("Back");
+    private JMenuItem jmiexit = new JMenuItem("Exit");
+    private JMenuItem jmiabout = new JMenuItem("關於作者");
     private ImageIcon img1 = new ImageIcon("light.png");
     private ImageIcon img2 = new ImageIcon("start.png");
     private ImageIcon img3 = new ImageIcon("exit.png");
@@ -35,6 +39,12 @@ public class Final extends JFrame {
         this.setLayout(null);
         this.setResizable(false);
         this.setTitle("電流急急棒");
+        this.setJMenuBar(jmb);
+        jmb.add(jmusystem);
+        jmb.add(jmuabout);
+        jmusystem.add(jmiback);
+        jmusystem.add(jmiexit);
+        jmuabout.add(jmiabout);
 
         container = this.getContentPane();
 
@@ -66,7 +76,7 @@ public class Final extends JFrame {
         jbtnstart.setIcon(img2);
         jbtnexit.setIcon(img3);
         jbtnpause.setIcon(img4);
-        
+
         this.add(jlb);
         this.add(jbtnstart);
         this.add(jbtnexit);
@@ -74,7 +84,7 @@ public class Final extends JFrame {
 
 
 
-        bgTimer = new Timer(100, new ActionListener() {
+        bgTimer = new Timer(200, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (bg == 1){
@@ -90,12 +100,6 @@ public class Final extends JFrame {
         });
         bgTimer.start(); //在timer以下
 
-//        jlb.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                System.out.println("Hello World");
-//            }
-//        });
 
         jbtnstart.addActionListener(new AbstractAction() {
             @Override
@@ -126,6 +130,11 @@ public class Final extends JFrame {
                 }
             }
         });
-
+        jmiabout.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"子堯&健伊製作");
+            }
+        });
     }
 }
