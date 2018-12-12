@@ -1,6 +1,11 @@
+package go;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class Easy extends JFrame {
     private JMenuBar jmb = new JMenuBar();
@@ -22,21 +27,9 @@ public class Easy extends JFrame {
     private Sprite wall9 = new Sprite();
     private Sprite wall10 = new Sprite();
     private Sprite finish = new Sprite();
-    private JLabel jlb1 = new JLabel();
-    private JLabel jlb2 = new JLabel();
-    private JLabel jlb3 = new JLabel();
-    private JLabel jlb4 = new JLabel();
-    private JLabel jlb5 = new JLabel();
     private ImageIcon img1 = new ImageIcon("stick.PNG");
-    private ImageIcon flash1 = new ImageIcon("電1.PNG");
-    private ImageIcon flash2 = new ImageIcon("電2.PNG");
-    private ImageIcon flash3 = new ImageIcon("電1.PNG");
-    private ImageIcon flash4 = new ImageIcon("電1.PNG");
-    private ImageIcon flash5 = new ImageIcon("電1.PNG");
     private Container cp;
     private Finalgo frameeasy;
-    private Timer bgTimer;
-    private int bg = 1;
 
 
     public Easy(Finalgo frameeasy){
@@ -57,61 +50,54 @@ public class Easy extends JFrame {
         this.setBounds(0,0,1600,1000);
         this.setResizable(false);
         this.setTitle("電流急急棒");
-        this.add(jlb1); this.add(jlb2); this.add(jlb3); this.add(jlb4); this.add(jlb5);
-        jlb1.setIcon(flash1); jlb1.setIcon(flash2); jlb1.setIcon(flash3); jlb1.setIcon(flash4); jlb1.setIcon(flash5);
 
-        jlb1.setBounds(10,10,100,100);
-        jlb2.setBounds(1300,30,100,100);
-        jlb3.setBounds(50,800,100,100);
-        jlb4.setBounds(1000,700,100,100);
-        jlb5.setBounds(1200,600,100,100);
+        stick.setPosition(0, 500, 80, 48);
+        stick.customRange(40, 14, 5, 16);    //****
+//        stick.setBackground(Color.BLACK);
+//        stick.setOpaque(true);
+        stick.setIcon(img1);
 
-        stick.setBounds(0, 510, 30, 30);
-        stick.setBackground(Color.BLACK);
-        stick.setOpaque(true);
-//        stick.setIcon(img1);
-
-        wall1.setBounds(0, 480, 300, 15);
+        wall1.setPosition(0, 480, 300, 15);
         wall1.setBackground(Color.BLACK);
         wall1.setOpaque(true);
 
-        wall2.setBounds(0, 550, 380, 15);
+        wall2.setPosition(0, 550, 380, 15);
         wall2.setBackground(Color.BLACK);
         wall2.setOpaque(true);
 
-        wall3.setBounds(285, 100, 15, 380);
+        wall3.setPosition(285, 100, 15, 380);
         wall3.setBackground(Color.BLACK);
         wall3.setOpaque(true);
 
-        wall4.setBounds(365, 250, 15, 300);
+        wall4.setPosition(365, 250, 15, 300);
         wall4.setBackground(Color.BLACK);
         wall4.setOpaque(true);
 
-        wall5.setBounds(285, 100, 700, 15);
+        wall5.setPosition(285, 100, 700, 15);
         wall5.setBackground(Color.BLACK);
         wall5.setOpaque(true);
 
-        wall6.setBounds(365, 250, 500, 15);
+        wall6.setPosition(365, 250, 500, 15);
         wall6.setBackground(Color.BLACK);
         wall6.setOpaque(true);
 
-        wall7.setBounds(985, 100, 15, 700);
+        wall7.setPosition(985, 100, 15, 700);
         wall7.setBackground(Color.BLACK);
         wall7.setOpaque(true);
 
-        wall8.setBounds(865, 250, 15, 640);
+        wall8.setPosition(865, 250, 15, 640);
         wall8.setBackground(Color.BLACK);
         wall8.setOpaque(true);
 
-        wall9.setBounds(985, 800, 700, 15);
+        wall9.setPosition(985, 800, 700, 15);
         wall9.setBackground(Color.BLACK);
         wall9.setOpaque(true);
 
-        wall10.setBounds(865, 890, 800, 15);
+        wall10.setPosition(865, 890, 800, 15);
         wall10.setBackground(Color.BLACK);
         wall10.setOpaque(true);
 
-        finish.setBounds(1550,800,40,100);
+        finish.setPosition(1550,800,40,100);
         finish.setBackground(Color.RED);
         finish.setOpaque(true);
 
@@ -128,24 +114,12 @@ public class Easy extends JFrame {
         this.add(wall10);
         this.add(finish);
 
-        bgTimer = new Timer(200, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (bg == 1){
-                    cp.setBackground(Color.gray);
-                    bg = 2;
-                }else if (bg == 2){
-                    cp.setBackground(Color.white);
-                    bg = 1;
-                }
-            }
-        });
-        bgTimer.start(); //在timer以下
-
         stick.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                stick.setLocation(e.getXOnScreen() - 15,e.getYOnScreen() - 35);
+
+                stick.changePosition(stick.getX() + e.getX() - stick.getWidth()/2, stick.getY() + e.getY() - stick.getHeight()/2);
+
             }
         });
 
@@ -156,13 +130,18 @@ public class Easy extends JFrame {
 //                System.out.println("x2: " + stick.xEnd);
 //                System.out.println("y1: " + stick.yStart);
 //                System.out.println("y2: " + stick.yEnd);
-                stick.setLocation(e.getXOnScreen() - 15,e.getYOnScreen() - 35);
-                if (stick.overlapCheck(wall1) || stick.overlapCheck(wall2)|| stick.overlapCheck(wall3) || stick.overlapCheck(wall4) || stick.overlapCheck(wall5)|| stick.overlapCheck(wall6) || stick.overlapCheck(wall7) || stick.overlapCheck(wall8) || stick.overlapCheck(wall9) || stick.overlapCheck(wall10)) {
-                    JOptionPane.showMessageDialog(Easy.this, "豬喔碰到了啦");
-                    stick.setBounds(0, 510, 30, 30);
-                }else if (stick.overlapCheck(finish)){
-                    JOptionPane.showMessageDialog(Easy.this, "恭喜過關唷");
-                    System.exit(0);
+
+                stick.changePosition(stick.getX() + e.getX() - stick.getWidth()/2, stick.getY() + e.getY() - stick.getHeight()/2);
+
+                if (!e.isControlDown()) {           //外掛
+
+                    if (stick.overlapCheck(wall1) || stick.overlapCheck(wall2) || stick.overlapCheck(wall3) || stick.overlapCheck(wall4) || stick.overlapCheck(wall5) || stick.overlapCheck(wall6) || stick.overlapCheck(wall7) || stick.overlapCheck(wall8) || stick.overlapCheck(wall9) || stick.overlapCheck(wall10)) {
+                        JOptionPane.showMessageDialog(Easy.this, "豬喔碰到了啦");
+                        stick.setPosition(0, 500, 80, 48);
+                    } else if (stick.overlapCheck(finish)) {
+                        JOptionPane.showMessageDialog(Easy.this, "過關唷");
+                    }
+
                 }
             }
         });
@@ -172,7 +151,7 @@ public class Easy extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null,"子堯&健伊製作");
-            }
+        }
         });
 
     }

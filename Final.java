@@ -1,3 +1,5 @@
+package go;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -24,8 +26,6 @@ public class Final extends JFrame {
     private Timer bgTimer;
     private int bg = 1;
     private Container container;
-
-
 
 //    private JLabel jlb1 = new JLabel("電流");
 //    private JLabel jlb2 = new JLabel("急急棒");
@@ -66,9 +66,6 @@ public class Final extends JFrame {
         jbtnpause.setContentAreaFilled(false);
         jbtnpause.setBorderPainted(false);
         jbtnpause.setForeground(Color.RED);
-
-
-
 
 
 
@@ -133,7 +130,7 @@ public class Final extends JFrame {
         jmiabout.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"子堯&健伊製作");
+                JOptionPane.showMessageDialog(null,"子堯&健伊&106021384製作");
             }
         });
     }
