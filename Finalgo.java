@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +25,8 @@ public class Finalgo extends JFrame{
     private Container cp;
     private Timer bgTimer;
     private int bg = 1;
+
+
     public Finalgo(Final frame){
         this.frame = frame;
         go();
@@ -125,22 +125,22 @@ public class Finalgo extends JFrame{
                 Finalgo.this.setVisible(false);
             }
         });
-        jbtnnormal.addActionListener(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Normal no = new Normal(Finalgo.this);
-                no.setVisible(true);
-                Finalgo.this.setVisible(false);
-            }
-        });
-        jbtnhard.addActionListener(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Hard ha = new Hard(Finalgo.this);
-                ha.setVisible(true);
-                Finalgo.this.setVisible(false);
-            }
-        });
+//        jbtnnormal.addActionListener(new AbstractAction() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                Normal no = new Normal(Finalgo.this);
+//                no.setVisible(true);
+//                Finalgo.this.setVisible(false);
+//            }
+//        });
+//        jbtnhard.addActionListener(new AbstractAction() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                Hard ha = new Hard(Finalgo.this);
+//                ha.setVisible(true);
+//                Finalgo.this.setVisible(false);
+//            }
+//        });
         jmiabout.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
