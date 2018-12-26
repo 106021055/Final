@@ -1,3 +1,5 @@
+package go;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,6 +12,8 @@ public class Easy extends JFrame {
     private JMenuItem jmiexit = new JMenuItem("Exit");
     private JMenuItem jmiabout = new JMenuItem("關於作者");
     private Final frame;
+    private JLabel jlbghost = new JLabel("");
+    private ImageIcon imgghost = new ImageIcon("ghost.png");
     private JButton jbtnpause = new JButton("");
     private ImageIcon img4 = new ImageIcon("pause.png");
     private ImageIcon img5 = new ImageIcon("start2.png");
@@ -174,6 +178,7 @@ public class Easy extends JFrame {
                         stick.setPosition(0, 500, 80, 48);
                     } else if (stick.overlapCheck(finish)) {
                         JOptionPane.showMessageDialog(Easy.this, "過關唷");
+                        frameeasy.setVisible(true);
                         Easy.this.setVisible(false);
 
                     }
