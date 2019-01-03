@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -129,7 +127,7 @@ public class Final extends JFrame {
         jmiabout.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"子堯&健伊&106021384製作");
+                JOptionPane.showMessageDialog(null,"子堯&健伊製作");
             }
         });
     }

@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 
 

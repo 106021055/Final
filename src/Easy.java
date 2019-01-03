@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,6 +15,9 @@ public class Easy extends JFrame {
     private JButton jbtnpause = new JButton("");
     private ImageIcon img4 = new ImageIcon("pause.png");
     private ImageIcon img5 = new ImageIcon("start2.png");
+    private JLabel jlb1 = new JLabel("請按住左鍵拖曳急急棒");
+    private JLabel jlb2 = new JLabel("棍子可碰觸邊界!");
+    private JLabel jlb3 = new JLabel("注意別讓紅點碰到了<3");
     private Sprite stick = new Sprite();
     private Sprite boom  = new Sprite();
     private Sprite wall1 = new Sprite();
@@ -61,56 +62,66 @@ public class Easy extends JFrame {
         this.add(jbtnpause);
         jbtnpause.setIcon(img4);
         stick.setPosition(0, 500, 80, 48);
-        stick.customRange(40, 14, 5, 16);    //****
+        stick.customRange(42, 15, 6, 18);    //****
         stick.setIcon(img1);
 
         boom.setPosition(0,500,80,48);
-        stick.customRange(40,14,5,16);
+        stick.customRange(42, 15, 6, 18);    //****
         wall1.setPosition(0, 480, 300, 15);
-        wall1.setBackground(Color.BLACK);
+        wall1.setBackground(Color.RED);
         wall1.setOpaque(true);
 
         wall2.setPosition(0, 550, 380, 15);
-        wall2.setBackground(Color.BLACK);
+        wall2.setBackground(Color.ORANGE);
         wall2.setOpaque(true);
 
         wall3.setPosition(285, 100, 15, 380);
-        wall3.setBackground(Color.BLACK);
+        wall3.setBackground(Color.YELLOW);
         wall3.setOpaque(true);
 
         wall4.setPosition(365, 250, 15, 300);
-        wall4.setBackground(Color.BLACK);
+        wall4.setBackground(Color.GREEN);
         wall4.setOpaque(true);
 
         wall5.setPosition(285, 100, 700, 15);
-        wall5.setBackground(Color.BLACK);
+        wall5.setBackground(Color.BLUE);
         wall5.setOpaque(true);
 
         wall6.setPosition(365, 250, 500, 15);
-        wall6.setBackground(Color.BLACK);
+        wall6.setBackground(Color.CYAN);
         wall6.setOpaque(true);
 
         wall7.setPosition(985, 100, 15, 700);
-        wall7.setBackground(Color.BLACK);
+        wall7.setBackground(Color.MAGENTA);
         wall7.setOpaque(true);
 
         wall8.setPosition(865, 250, 15, 640);
-        wall8.setBackground(Color.BLACK);
+        wall8.setBackground(Color.RED);
         wall8.setOpaque(true);
 
         wall9.setPosition(985, 800, 700, 15);
-        wall9.setBackground(Color.BLACK);
+        wall9.setBackground(Color.ORANGE);
         wall9.setOpaque(true);
 
         wall10.setPosition(865, 890, 800, 15);
-        wall10.setBackground(Color.BLACK);
+        wall10.setBackground(Color.YELLOW);
         wall10.setOpaque(true);
 
         finish.setPosition(1550,800,40,100);
         finish.setBackground(Color.RED);
         finish.setOpaque(true);
 
+        jlb1.setBounds(100,800,600,100);
+        jlb1.setFont(new Font(null,Font.BOLD,50));
+        jlb2.setBounds(1050,100,600,100);
+        jlb2.setFont(new Font(null,Font.BOLD,50));
+        jlb3.setBounds(1050,300,600,100);
+        jlb3.setFont(new Font(null,Font.BOLD,50));
+
         this.add(stick);
+        this.add(jlb1);
+        this.add(jlb2);
+        this.add(jlb3);
         this.add(wall1);
         this.add(wall2);
         this.add(wall3);
@@ -131,7 +142,7 @@ public class Easy extends JFrame {
                     bg = 2;
                 }else if (bg == 2){
 //                    jlb.setIcon(imageIcon[1]);
-                    cp.setBackground(Color.white);
+                    cp.setBackground(Color.LIGHT_GRAY);
                     bg = 1;
                 }
             }

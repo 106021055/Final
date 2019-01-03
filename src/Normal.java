@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -77,73 +75,73 @@ public class Normal extends JFrame {
         this.add(jbtnpause);
         jbtnpause.setIcon(img4);
         stick.setPosition(0, 500, 80, 48);
-        stick.customRange(40, 14, 5, 16);    //****
+        stick.customRange(42, 15, 6, 18);    //****
         stick.setIcon(img1);
 
         boom.setPosition(0,500,80,48);
-        stick.customRange(40,14,5,16);
+        stick.customRange(42, 15, 6, 18);    //****
         wall1.setPosition(0, 480, 110, 15);
-        wall1.setBackground(Color.BLACK);
+        wall1.setBackground(Color.RED);
         wall1.setOpaque(true);
 
         wall2.setPosition(0, 550, 190, 15);
-        wall2.setBackground(Color.BLACK);
+        wall2.setBackground(Color.ORANGE);
         wall2.setOpaque(true);
 
         wall3.setPosition(95, 285, 15, 200);
-        wall3.setBackground(Color.BLACK);
+        wall3.setBackground(Color.YELLOW);
         wall3.setOpaque(true);
 
         wall4.setPosition(175, 355, 15, 200);
-        wall4.setBackground(Color.BLACK);
+        wall4.setBackground(Color.GREEN);
         wall4.setOpaque(true);
 
         wall5.setPosition(105, 285, 300, 15);
-        wall5.setBackground(Color.BLACK);
+        wall5.setBackground(Color.BLUE);
         wall5.setOpaque(true);
 
         wall6.setPosition(175, 345, 165, 15);
-        wall6.setBackground(Color.BLACK);
+        wall6.setBackground(Color.CYAN);
         wall6.setOpaque(true);
 
         wall7.setPosition(325, 355, 15, 330);
-        wall7.setBackground(Color.BLACK);
+        wall7.setBackground(Color.MAGENTA);
         wall7.setOpaque(true);
 
         wall8.setPosition(405, 285, 15, 200);
-        wall8.setBackground(Color.BLACK);
+        wall8.setBackground(Color.RED);
         wall8.setOpaque(true);
 
         wall9.setPosition(325, 680, 350, 15);
-        wall9.setBackground(Color.BLACK);
+        wall9.setBackground(Color.ORANGE);
         wall9.setOpaque(true);
 
         wall27.setPosition(405, 480, 180, 15);
-        wall27.setBackground(Color.BLACK);
+        wall27.setBackground(Color.YELLOW);
         wall27.setOpaque(true);
 
         wall10.setPosition(405, 540, 180, 100);
-        wall10.setBackground(Color.BLACK);
+        wall10.setBackground(Color.GREEN);
         wall10.setOpaque(true);
 
         wall11.setPosition(675, 405, 15, 290);
-        wall11.setBackground(Color.BLACK);
+        wall11.setBackground(Color.BLUE);
         wall11.setOpaque(true);
 
         wall12.setPosition(575, 335, 15, 160);
-        wall12.setBackground(Color.BLACK);
+        wall12.setBackground(Color.CYAN);
         wall12.setOpaque(true);
 
         wall13.setPosition(675, 405, 315, 15);
-        wall13.setBackground(Color.BLACK);
+        wall13.setBackground(Color.MAGENTA);
         wall13.setOpaque(true);
 
         wall14.setPosition(575, 335, 200, 15);
-        wall14.setBackground(Color.BLACK);
+        wall14.setBackground(Color.RED);
         wall14.setOpaque(true);
 
         wall15.setPosition(770, 150, 15, 200);
-        wall15.setBackground(Color.BLACK);
+        wall15.setBackground(Color.ORANGE);
         wall15.setOpaque(true);
 //
 //        wall16.setPosition(875, 220, 15, 200);
@@ -151,46 +149,46 @@ public class Normal extends JFrame {
 //        wall16.setOpaque(true);
 
         wall17.setPosition(875, 205, 100, 170);
-        wall17.setBackground(Color.BLACK);
+        wall17.setBackground(Color.YELLOW);
         wall17.setOpaque(true);
 
         wall18.setPosition(775, 150, 300, 15);
-        wall18.setBackground(Color.BLACK);
+        wall18.setBackground(Color.GREEN);
         wall18.setOpaque(true);
 
         wall19.setPosition(975, 410, 15, 60);
-        wall19.setBackground(Color.BLACK);
+        wall19.setBackground(Color.BLUE);
         wall19.setOpaque(true);
 
         wall20.setPosition(1075, 150, 15, 250);
-        wall20.setBackground(Color.BLACK);
+        wall20.setBackground(Color.CYAN);
         wall20.setOpaque(true);
 
         wall21.setPosition(1075, 400, 150, 15);
-        wall21.setBackground(Color.BLACK);
+        wall21.setBackground(Color.MAGENTA);
         wall21.setOpaque(true);
 
         wall22.setPosition(975, 460, 150, 15);
-        wall22.setBackground(Color.BLACK);
+        wall22.setBackground(Color.RED);
         wall22.setOpaque(true);
 
         wall23.setPosition(1225, 400, 15, 200);
-        wall23.setBackground(Color.BLACK);
+        wall23.setBackground(Color.ORANGE);
         wall23.setOpaque(true);
 
         wall24.setPosition(1125, 460, 15, 250);
-        wall24.setBackground(Color.BLACK);
+        wall24.setBackground(Color.YELLOW);
         wall24.setOpaque(true);
 
         wall25.setPosition(1125, 700, 480, 15);
-        wall25.setBackground(Color.BLACK);
+        wall25.setBackground(Color.GREEN);
         wall25.setOpaque(true);
 
         wall26.setPosition(1225, 600, 450, 15);
-        wall26.setBackground(Color.BLACK);
+        wall26.setBackground(Color.BLUE);
         wall26.setOpaque(true);
         finish.setPosition(1550,610,40,100);
-        finish.setBackground(Color.RED);
+        finish.setBackground(Color.CYAN);
         finish.setOpaque(true);
 
         this.add(stick);
@@ -231,7 +229,7 @@ public class Normal extends JFrame {
                     bg = 2;
                 }else if (bg == 2){
 //                    jlb.setIcon(imageIcon[1]);
-                    cp.setBackground(Color.white);
+                    cp.setBackground(Color.LIGHT_GRAY);
                     bg = 1;
                 }
             }

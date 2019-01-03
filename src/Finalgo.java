@@ -1,5 +1,3 @@
-package go;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -95,10 +93,12 @@ public class Finalgo extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (bg == 1){
+//                    jlb.setIcon(imageIcon[0]);
                     cp.setBackground(Color.gray);
                     bg = 2;
                 }else if (bg == 2){
-                    cp.setBackground(Color.white);
+//                    jlb.setIcon(imageIcon[1]);
+                    cp.setBackground(Color.LIGHT_GRAY);
                     bg = 1;
                 }
             }
