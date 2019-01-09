@@ -21,9 +21,9 @@ class Sprite extends JLabel{
     //  急急棒移動後   新的x軸起點, x軸終點, y軸起點, y軸終點
     public void setRange(int x, int y){
         xStart = x + xStartLimit;
-        xEnd = x + getWidth() - xEndLimit;
+        xEnd = x + getWidth() - xEndLimit;  //取得寬度
         yStart = y + yStartLimit;
-        yEnd = y + getHeight() - yEndLimit;
+        yEnd = y + getHeight() - yEndLimit;  //取得高度
     }
 
     //    自訂範圍  讓無形的邊框縮減   縮小至只需要判定的範圍
@@ -41,7 +41,7 @@ class Sprite extends JLabel{
 
     //    是否重疊 *******
     public boolean overlapCheck(Sprite sprite) {
-//        true 表示重疊 false 表示沒重疊
+//        true 表示重疊 false 表示沒重疊  &&=兩者都須滿足  ||=其中一個滿足就好
         if ((this.xStart > sprite.xStart && this.xStart < sprite.xEnd || this.xEnd > sprite.xStart && this.xEnd < sprite.xEnd) &&
                 (this.yStart > sprite.yStart && this.yStart < sprite.yEnd || this.yEnd > sprite.yStart && this.yEnd < sprite.yEnd)) {
             return true;  //代表重疊
