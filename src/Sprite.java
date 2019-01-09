@@ -3,7 +3,7 @@ import javax.swing.*;
 
 class Sprite extends JLabel{
 
-    private int xStart, xEnd, yStart, yEnd;        // 關卡邊界的   x軸起點, x軸終點, y軸起點, y軸終點
+    private int xStart, xEnd, yStart, yEnd;        // 關卡中 牆壁的   x軸起點, x軸終點, y軸起點, y軸終點
     private int xStartLimit, xEndLimit, yStartLimit, yEndLimit;     // 急急棒圈圈的限制範圍  x 軸起點限制, x 軸終點限制, y 軸起點限制, y 軸終點限制
 
     //    用到Sprite時 用setPosition
