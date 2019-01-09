@@ -12,7 +12,7 @@ class Sprite extends JLabel{
         setRange(x, y);
     }
 
-    //    急急棒移動時 用到Sprite 用changePosition 一直改變
+    //    急急棒移動時 用到Sprite 用changePosition 因為有移動 所以有改變
     public void changePosition(int x, int y){
         setLocation(x, y);
         setRange(x, y);
