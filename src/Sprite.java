@@ -21,9 +21,9 @@ class Sprite extends JLabel{
     //  急急棒移動後   新的x軸起點, x軸終點, y軸起點, y軸終點
     public void setRange(int x, int y){
         xStart = x + xStartLimit;
-        xEnd = x + getWidth() - xEndLimit;  //取得 牆壁or急急棒 的寬度
+        xEnd = x + getWidth() - xEndLimit;  //getWidth = 取得 牆壁or急急棒 的寬度
         yStart = y + yStartLimit;
-        yEnd = y + getHeight() - yEndLimit;  //取得 牆壁or急急棒 的高度
+        yEnd = y + getHeight() - yEndLimit;  //getHeight = 取得 牆壁or急急棒 的高度
     }
 
     //    自訂範圍  讓無形的邊框縮減   縮小至只需要判定"棒頭範圍"
