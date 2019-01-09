@@ -26,7 +26,8 @@ class Sprite extends JLabel{
         yEnd = y + getHeight() - yEndLimit;  //取得 牆壁or急急棒 的高度
     }
 
-    //    自訂範圍  讓無形的邊框縮減   縮小至只需要判定的範圍
+    //    自訂範圍  讓無形的邊框縮減   縮小至只需要判定"棒頭範圍"
+    //    x1+x2=棒頭左緣~圖片最左邊+棒頭右緣~圖片最右邊   y1+y2=棒頭上緣~圖片最頂+棒頭上緣~圖片最底
     public void customRange(int x1, int x2, int y1, int y2){
         if (x1 + x2 > getWidth() || y1 + y2 > getHeight()){
 
@@ -39,9 +40,9 @@ class Sprite extends JLabel{
         yEndLimit = y2;
     }
 
-    //    是否重疊 *******
+    //    是否重疊 *******     &&=兩者都須滿足  ||=其中一個滿足就好 
     public boolean overlapCheck(Sprite sprite) {
-//        true 表示重疊 false 表示沒重疊  &&=兩者都須滿足  ||=其中一個滿足就好
+//        true 表示重疊 false 表示沒重疊   this=此物件 視窗內的每個邊都可以是"此物件"
         if ((this.xStart > sprite.xStart && this.xStart < sprite.xEnd || this.xEnd > sprite.xStart && this.xEnd < sprite.xEnd) &&
                 (this.yStart > sprite.yStart && this.yStart < sprite.yEnd || this.yEnd > sprite.yStart && this.yEnd < sprite.yEnd)) {
             return true;  //代表重疊
